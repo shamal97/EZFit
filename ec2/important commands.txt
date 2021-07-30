@@ -1,0 +1,24 @@
+
+./build/examples/openpose/openpose.bin --image_dir examples/media/ --write_json testout/ --display 0 --render_pose 0
+
+
+
+
+run openpose
+./build/examples/openpose/openpose.bin --image_dir input/ --write_json output/ --display 0 --render_pose 0
+
+
+workflow for developing docker file
+build
+docker build -t 18500ezfit/openposehandler .
+
+
+push
+docker push 18500ezfit/openposehandler:latest
+
+run
+docker run -p 8081:8081 -it --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0 18500ezfit/openposehandler:latest
+
+
+
+

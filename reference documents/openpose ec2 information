@@ -1,0 +1,13 @@
+first ssh into ec2
+ssh -i openposeKey.pem ubuntu@<IPv4 name>
+
+start docker container:
+sudo nvidia-docker run -v /home/ubuntu/data:/data -it mjsobrep/openpose:latest bash
+this also puts you into the container 
+
+enter a running docker container
+sudo docker exec -i -t <container ID> /bin/bash
+
+openpose quickstart:
+https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md
+
